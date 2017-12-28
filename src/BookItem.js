@@ -32,11 +32,11 @@ const styles = StyleSheet.create({
 class BookItem extends Component {
     render(){
         return (
-            <View style = {styles.booItem}>
+            <View style = {styles.bookItem}>
                 <Image style  = {styles.cover}/>
                 <View style = {styles.info}>
                     <Text style = {styles.author}>{this.props.author}</Text>
-                    <Text style = {styles.title}>{this.props.titel}</Text>
+                    <Text style = {styles.title}>{this.props.title}</Text>
                 </View>
             </View>
         );
