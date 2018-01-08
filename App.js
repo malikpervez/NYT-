@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { StyleSheet, Text, View, Image, FlatList } from "react-native"
 
 import BookItem from "./src/BookItem"
+import fetchBooks from "./src/API"
 
 const mockBooks = [
     {
@@ -24,7 +25,11 @@ const mockBooks = [
 class NYT extends Component {
     constructor(props){
         super(props);
-        this.state = { data: this._addKeysToBooks(mockBooks) };
+        this.state = { data: [] };
+    }
+
+    componentDidMount() {
+        this._refreshData();
     }
 
     _renderItem = ({item}) => {
@@ -43,6 +48,12 @@ class NYT extends Component {
         //for rendering
         return books.map(book => {
             return Object.assign(book, {key: book.title})
+        });
+    };
+
+    _refreshData = () => {
+        fetchBooks().then(books => {
+            this.setState({ data: this._addKeysToBooks(books)})
         });
     };
 
