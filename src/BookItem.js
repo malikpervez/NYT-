@@ -2,6 +2,21 @@ import React, { Component } from "react";
 
 import { StyleSheet, Text, View, Image, ListView } from "react-native";
 
+
+class BookItem extends Component {
+    render(){
+        return (
+            <View style = {styles.bookItem}>
+                <Image style  = {styles.cover}  />
+                <View style = {styles.info}>
+                    <Text style = {styles.author}>{this.props.author}</Text>
+                    <Text style = {styles.title}>{this.props.title}</Text>
+                </View>
+            </View>
+        );
+    }
+}
+
 const styles = StyleSheet.create({
     bookItem: {
         flexDirection: "row",
@@ -26,19 +41,4 @@ const styles = StyleSheet.create({
     author: { fontSize: 18 },
     title: {fontSize: 18, fontWeight: "bold"}
 });
-
-class BookItem extends Component {
-    render(){
-        return (
-            <View style = {styles.bookItem}>
-                <Image style  = {styles.cover}  />
-                <View style = {styles.info}>
-                    <Text style = {styles.author}>{this.props.author}</Text>
-                    <Text style = {styles.title}>{this.props.title}</Text>
-                </View>
-            </View>
-        );
-    }
-}
-
 export default BookItem;
