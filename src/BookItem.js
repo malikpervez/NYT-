@@ -7,7 +7,7 @@ class BookItem extends Component {
     render(){
         return (
             <View style = {styles.bookItem}>
-                <Image style  = {styles.cover}  />
+                <Image style  = {styles.cover} source = {{ uri: this.props.coverURL}}/>
                 <View style = {styles.info}>
                     <Text style = {styles.author}>{this.props.author}</Text>
                     <Text style = {styles.title}>{this.props.title}</Text>
