@@ -17,6 +17,7 @@ class NYT extends Component {
 
     _renderItem = ({item}) => {
         return (
+            //render each item from api and formats data into props
             <BookItem
                 coverURL = {item.book_image}
                 title= {item.key}
@@ -35,6 +36,7 @@ class NYT extends Component {
     };
 
     _refreshData = () => {
+        //using aync function to refresh live data into each cell
         fetchBooks().then(books => {
             this.setState({ data: this._addKeysToBooks(books)})
         });

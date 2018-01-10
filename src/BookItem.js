@@ -2,10 +2,12 @@ import React, { Component } from "react";
 
 import { StyleSheet, Text, View, Image, ListView } from "react-native";
 
+//this component cycles through the api and renders a cells in a flatlist within App.js
 
 class BookItem extends Component {
     render(){
         return (
+            //Container and each cell of a BookItem
             <View style = {styles.bookItem}>
                 <Image style  = {styles.cover} source = {{ uri: this.props.coverURL}}/>
                 <View style = {styles.info}>
